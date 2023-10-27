@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Name="BusInfoList" Margin="10,92,10,92">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding RouteName}" Header="버스 번호" Width="130"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding BusArrTime}" Header="도착시간" Width="130"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding EndStationName}" Header="종점정류소명" Width="130"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ArrStationName}" Header="도착하는 정류장명" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding StationCount}" Header="남은 정거장 수" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
